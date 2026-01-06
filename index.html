@@ -4,21 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="/style.css"> -->
-    <title> E-COMMERCE WEBSITE BY EDYODA | CREATED BY PRIYANKA SHARMA </title>
-    <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    
+    <!-- SEO Meta Tags -->
+    <title>CO TAILOR - Juki Machine Accessories & Parts | Industrial Supplies</title>
+    <meta name="description" content="Shop quality Juki machine accessories and parts at CO TAILOR. Your trusted source for industrial machine parts and accessories in Pakistan.">
+    <meta name="keywords" content="Juki Machine Accessories, Juki Parts, Industrial Parts, Machine Accessories, CO TAILOR, Pakistan">
+    <meta name="author" content="CO TAILOR">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="CO TAILOR - Juki Machine Accessories & Parts">
+    <meta property="og:description" content="Shop quality Juki machine accessories and parts at CO TAILOR">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="CO TAILOR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="CO TAILOR - Juki Machine Accessories & Parts">
+    <meta property="twitter:description" content="Shop quality Juki machine accessories and parts at CO TAILOR">
+    <meta property="twitter:image" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.webp" type="image/webp" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="img/favicon.webp">
     <!-- header links -->
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Font Awesome - Free CDN (no authentication required) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts - Load with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Supabase JS Client - Load asynchronously -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    
+    <!-- Performance Utils - All console statements have been removed -->
+    <script src="js/performance-utils.js"></script>
+    
+    <!-- Authentication CSS -->
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/content.css">
     <!-- slider links -->
     <!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
     <script src="js/jQuery3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    
+    <style>
+        /* Full Page Loader */
+        #pageLoader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        #pageLoader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        #pageLoader .loader {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        #pageLoader .loader::before,
+        #pageLoader .loader::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top-color: rgb(3, 122, 122);
+            animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+        
+        #pageLoader .loader::before {
+            width: 60px;
+            height: 60px;
+            border-width: 4px;
+            border-top-color: rgb(3, 122, 122);
+            border-right-color: rgba(3, 122, 122, 0.3);
+        }
+        
+        #pageLoader .loader::after {
+            width: 40px;
+            height: 40px;
+            top: 10px;
+            left: 10px;
+            border-width: 3px;
+            border-top-color: rgb(3, 122, 122);
+            border-right-color: rgba(3, 122, 122, 0.5);
+            animation-direction: reverse;
+            animation-duration: 0.8s;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        #pageLoader p {
+            color: rgb(3, 122, 122);
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Full Page Loader -->
+    <div id="pageLoader">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+    
     <!-- HEADER -->
     <div id="1"></div>
     <script>
@@ -29,6 +152,25 @@
             req.open("GET", url, false);
             req.send(null);
             document.getElementById(1).innerHTML = req.responseText;
+            
+            // Execute scripts from loaded HTML (scripts don't execute when inserted via innerHTML)
+            const scripts = document.getElementById(1).querySelectorAll('script');
+            scripts.forEach(function(oldScript) {
+                const newScript = document.createElement('script');
+                if (oldScript.src) {
+                    newScript.src = oldScript.src;
+                } else {
+                    newScript.textContent = oldScript.textContent;
+                }
+                document.head.appendChild(newScript);
+                oldScript.remove();
+            });
+            
+            // After header loads, check for login button
+            const loginBtn = document.getElementById('authLoginBtn');
+            if (loginBtn) {
+                // Login button found
+            }
         }
     </script>
     <!-- SLIDER -->
@@ -45,15 +187,70 @@
     </script>
 
     <!-- CONTENT SECTION -->
-    <div id="3"></div>
+    <div id="3">
+        <div id="mainContainer">
+            <h1> juki machine parts </h1>
+            <div id="containerClothing">
+                <!-- JS rendered code -->
+            </div>
+
+            <h1> juki machine accessories </h1>
+            <div id="containerAccessories">
+                <!-- JS rendered code -->
+            </div>
+        </div>
+    </div>
+
+    <!-- VIDEO TESTIMONIALS SECTION -->
+    <div id="6"></div>
     <script>
-        load("content.html");
+        load("videoTestimonials.html");
         function load(url)
         {
             req = new XMLHttpRequest();
             req.open("GET", url, false);
             req.send(null);
-            document.getElementById(3).innerHTML = req.responseText;
+            document.getElementById(6).innerHTML = req.responseText;
+            // Initialize video testimonials after loading
+            setTimeout(function() {
+                if (typeof window.initializeVideoTestimonials === 'function') {
+                    window.initializeVideoTestimonials();
+                } else {
+                    // Retry after scripts load
+                    setTimeout(function() {
+                        if (typeof window.initializeVideoTestimonials === 'function') {
+                            window.initializeVideoTestimonials();
+                        }
+                    }, 500);
+                }
+            }, 300);
+        }
+    </script>
+
+    <!-- REVIEWS SECTION -->
+    <div id="5"></div>
+    <script>
+        load("reviews.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(5).innerHTML = req.responseText;
+            // Trigger reviews initialization after reviews.html is loaded
+            // Wait a bit to ensure scripts are loaded
+            setTimeout(function() {
+                if (typeof window.initializeReviews === 'function') {
+                    window.initializeReviews();
+                } else {
+                    // Retry after scripts load
+                    setTimeout(function() {
+                        if (typeof window.initializeReviews === 'function') {
+                            window.initializeReviews();
+                        }
+                    }, 500);
+                }
+            }, 300);
         }
     </script>
 
@@ -70,26 +267,112 @@
         }
     </script>
 
-</body>
-
-<!-- slider JS START -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-<script>
-    $(document).ready(function()
-    {
-    $('#containerSlider').slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
+    <!-- slider JS START -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+        $('#containerSlider').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            });
         });
+    </script>
+    <!-- slider JS ENDS -->
+
+    <!-- content JS -->
+    <!-- Cart Drawer - Load early so it's available for all cart actions -->
+    <script src="js/cartDrawer.js"></script>
+    <!-- Optimistic UI Architecture -->
+    <script src="js/stateManager.js"></script>
+    <script src="js/apiLayer.js"></script>
+    <script src="js/uiLayer.js"></script>
+    <script src="js/optimisticCart.js"></script>
+    <!-- Product Variants Management -->
+    <script src="js/productVariants.js"></script>
+    <!-- Load content.js - removed defer to ensure it runs after content.html loads -->
+    <script src="content.js"></script>
+    <script>
+        // Verify content.js loaded
+        console.log('[Index] content.js should be loaded. Checking...');
+        if (typeof initProductListing === 'function') {
+            console.log('[Index] initProductListing function found!');
+        } else {
+            console.error('[Index] initProductListing function NOT found!');
+        }
+    </script>
+
+    <!-- Reviews JS - Load with defer for better performance -->
+    <!-- Cache busting to force fresh load -->
+    <script src="js/reviews.js?v=17" defer></script>
+    <script src="js/reviewForm.js?v=3" defer></script>
+
+    <!-- Global Search JS -->
+    <script src="js/headerSearch.js" defer></script>
+
+    <!-- Authentication JS - Load with defer for better performance -->
+    <script src="js/auth.js" defer></script>
+    <script src="js/authUI.js" defer></script>
+    <script src="js/auth-global-init.js" defer></script>
+    <!-- User Cart Management - Required for badge updates -->
+    <script src="js/userCart.js" defer></script>
+    <script>
+        // Check if auth loaded (silently)
+        if (window.authUI) {
+            // Auth UI loaded
+        }
+    </script>
+
+    <!-- WhatsApp Button -->
+    <script src="js/whatsappButton.js"></script>
+    
+    <!-- Initialize auth after page loads -->
+    <script>
+        window.addEventListener('load', function() {
+            // Wait for header to be fully loaded
+            setTimeout(function() {
+                const loginBtn = document.getElementById('authLoginBtn');
+                
+                // Initialize auth UI
+                if (window.authUI && typeof window.authUI.initAuthUI === 'function') {
+                    window.authUI.initAuthUI();
+                } else if (window.authUI && typeof window.authUI.doInitAuthUI === 'function') {
+                    window.authUI.doInitAuthUI();
+                }
+                
+                // Update auth UI state
+                if (window.auth && typeof window.auth.updateAuthUI === 'function') {
+                    window.auth.updateAuthUI();
+                }
+            }, 1000);
+        });
+        
+        // Also try immediately (in case page is already loaded)
+        if (document.readyState === 'complete') {
+            setTimeout(function() {
+                const loginBtn = document.getElementById('authLoginBtn');
+            }, 100);
+        }
+    </script>
+
+<!-- Hide page loader when everything is loaded -->
+<script>
+    window.addEventListener('load', function() {
+        // Wait a bit for all content to render
+        setTimeout(function() {
+            var pageLoader = document.getElementById('pageLoader');
+            if (pageLoader) {
+                pageLoader.classList.add('hidden');
+                // Remove from DOM after animation
+                setTimeout(function() {
+                    pageLoader.remove();
+                }, 500);
+            }
+        }, 500);
     });
 </script>
-<!-- slider JS ENDS -->
-
-<!-- content JS -->
-<script src="content.js"></script>
-
 </html>

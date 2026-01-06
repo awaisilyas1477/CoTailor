@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> ORDER PLACED | E-COMMERCE WEBSITE BY EDYODA </title>
     <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <link rel="icon" href="img/favicon.webp" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.webp" type="image/jpeg">
     <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/orderPlaced.css">
@@ -34,6 +35,15 @@
         <div id="aboutCheck">
             <h1> Order Placed Successfully! </h1>
             <p> We've sent you an email with the Order details. </p>
+            <div id="cardsContainer">
+                <div id="paymentInfo">
+                    <h3><i class="fas fa-money-bill-wave"></i> Payment Method: Cash on Delivery</h3>
+                    <p>Please keep the exact amount ready when the order is delivered.</p>
+                </div>
+                <div id="orderDetails">
+                    <!-- JS rendered -->
+                </div>
+            </div>
         </div>
     </div>
         <!-- FOOTER -->
@@ -49,5 +59,18 @@
             }
         </script>
 </body>
-<script src="/orderPlaced.js"></script>
+<script src="orderPlaced.js"></script>
+<!-- Global Search JS -->
+<script src="js/headerSearch.js"></script>
+<!-- WhatsApp Button -->
+<script src="js/whatsappButton.js"></script>
+
+<!-- Authentication JS - Required for login button to work -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js"></script>
+    <script src="js/authUI.js"></script>
+    <script src="js/auth-global-init.js"></script>
+    <!-- User Cart Management - Required for badge updates -->
+    <script src="js/userCart.js"></script>
 </html>

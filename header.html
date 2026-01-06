@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> HEADER | E-COMMERCE WEBSITE </title>
     <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <link rel="icon" href="img/favicon.webp" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.webp" type="image/jpeg">
     <!-- EXTERNAL LINKS -->
     <link rel="stylesheet" href="css/header.css">
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link rel="stylesheet" href="css/cartDrawer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,16 +21,168 @@
             <!-- MAIN CONTAINER -->
             <div id="container">
                 <!-- SHOP NAME -->
-                <div id="shopName"><a href="index.html"> <b>SHOP</b>LANE </a></div>
-                 
-                    <div id="user">
-                        <a href="cart.html"> <i class="fas fa-shopping-cart addedToCart"><div id="badge"> 0 </div></i></a>
-                        <a href="#"> <i class="fas fa-user-circle userIcon"></i> </a>
+                <div id="shopName">
+                    <a href="index.html"> 
+                        <b>CO</b> TAILOR 
+                    </a>
+                </div>
+                
+                <!-- NAVIGATION LINKS -->
+                <nav id="mainNav">
+                    <a href="index.html">Home</a>
+                    <a href="about-us.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                
+                <!-- MOBILE MENU ICON -->
+                <div id="mobileMenuIcon" class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <!-- SEARCH ICON -->
+                <div id="searchIconContainer">
+                    <i class="fas fa-search" id="searchIcon"></i>
+                </div>
+                
+                <!-- MOBILE DRAWER -->
+                <div id="mobileDrawer" class="mobile-drawer">
+                    <div class="drawer-overlay" id="drawerOverlay"></div>
+                    <div class="drawer-content">
+                        <div class="drawer-header">
+                            <h2 class="drawer-logo"><a href="index.html">CO <span>TAILOR</span></a></h2>
+                            <button class="drawer-close" id="drawerClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <nav class="drawer-nav">
+                            <a href="index.html" class="drawer-link">
+                                <i class="fas fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                            <a href="about-us.html" class="drawer-link">
+                                <i class="fas fa-info-circle"></i>
+                                <span>About Us</span>
+                            </a>
+                            <a href="contact.html" class="drawer-link">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </a>
+                        </nav>
                     </div>
+                </div>
+                
+                <!-- SEARCH POPUP -->
+                <div id="searchPopup" class="search-popup">
+                    <div class="search-popup-content">
+                        <div class="search-popup-header">
+                            <h3>Search Products</h3>
+                            <button class="close-search" id="closeSearch">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div id="searchBox">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="globalSearch" placeholder="Search for products, brands and more..." autocomplete="off">
+                            <div id="searchResults" class="search-results"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CART DRAWER (Right to Left Slide) -->
+                <div id="cartDrawer" class="cart-drawer">
+                    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+                    <div class="cart-drawer-content">
+                        <div class="cart-drawer-header">
+                            <h2>Your Cart</h2>
+                            <button class="cart-drawer-close" id="cartDrawerClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="cart-drawer-body">
+                            <div id="cartDrawerItems" class="cart-drawer-items">
+                                <!-- Cart items will be loaded here -->
+                            </div>
+                            <div id="cartDrawerEmpty" class="cart-drawer-empty" style="display: none;">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p>Your cart is empty</p>
+                                <button onclick="closeCartDrawer()">Continue Shopping</button>
+                            </div>
+                        </div>
+                        <div class="cart-drawer-footer">
+                            <div class="cart-drawer-summary">
+                                <div class="cart-drawer-summary-row">
+                                    <span>Subtotal:</span>
+                                    <span id="cartDrawerSubtotal">Rs 0</span>
+                                </div>
+                                <div class="cart-drawer-summary-row">
+                                    <span>Delivery:</span>
+                                    <span id="cartDrawerDelivery">Rs 200</span>
+                                </div>
+                                <div class="cart-drawer-summary-row total">
+                                    <span>Total:</span>
+                                    <span id="cartDrawerTotal">Rs 0</span>
+                                </div>
+                            </div>
+                            <a href="checkout.html" class="cart-drawer-checkout-btn" onclick="closeCartDrawer()">
+                                <i class="fas fa-lock"></i> Proceed to Checkout
+                            </a>
+                            <a href="cart.html" class="cart-drawer-view-cart-btn">
+                                View Full Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 
+                <!-- USER ACTIONS -->
+                <div id="user">
+                    <!-- Cart Icon - Left Side -->
+                    <a href="#" class="cart-link"> 
+                        <i class="fas fa-shopping-cart addedToCart">
+                            <div id="badge"> 0 </div>
+                        </i>
+                    </a>
+
+                    <!-- Authentication Section - Right Side -->
+                    <div class="auth-section">
+                        <!-- Authentication: Login Button (shown when not logged in) -->
+                        <button id="authLoginBtn" class="auth-login-btn">
+                            <i class="fas fa-user"></i>
+                            <span>Login</span>
+                        </button>
+
+                        <!-- Authentication: User Menu (shown when logged in) -->
+                        <div id="authUserMenuContainer" style="position: relative;">
+                            <div id="authUserMenuTrigger" style="display: none;">
+                                <div class="user-avatar" id="authUserAvatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="user-name" id="authUserName">User</span>
+                                <i class="fas fa-chevron-down user-arrow"></i>
+                            </div>
+                            <div id="authUserMenu" style="display: none;">
+                                <a href="#" class="auth-user-menu-item" id="authViewProfile">
+                                    <i class="fas fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="#" class="auth-user-menu-item" id="authOrderHistory">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <span>Order History</span>
+                                </a>
+                                <button class="auth-user-menu-item danger" id="authLogoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </section>
     </header>
+    
+    <script src="js/headerSearch.js"></script>
+    <script src="js/cartDrawer.js"></script>
 
 </body>
 </html>

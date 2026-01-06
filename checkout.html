@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Checkout | E-COMMERCE WEBSITE BY EDYODA </title>
+    <link rel="stylesheet" href="css/checkout.css">
+    <!-- favicon -->
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpeg">
+    <!-- header links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- CHECKOUT CONTAINER -->
+    <div id="checkoutMainContainer">
+        <div id="checkoutHeader">
+            <div class="header-left">
+                <h1> Checkout </h1>
+                <h3 id="totalItem"> Total Items: 0 </h3>
+            </div>
+            <div class="header-right">
+                <a href="cart.html" class="btn-back-to-cart">
+                    <i class="fas fa-arrow-left"></i> Back to Cart
+                </a>
+                <a href="index.html" class="btn-continue-shopping">
+                    <i class="fas fa-shopping-bag"></i> Continue Shopping
+                </a>
+            </div>
+        </div>
+        
+        <div id="checkoutContainer">
+            <!-- Order Summary -->
+            <div id="orderSummary">
+                <h2>Order Summary</h2>
+                <div id="summaryContent">
+                    <!-- Skeleton Loader -->
+                    <div id="summarySkeleton" class="summary-skeleton" style="display: none;">
+                        <div class="skeleton-item">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line short"></div>
+                        </div>
+                        <div class="skeleton-item">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line short"></div>
+                        </div>
+                        <div class="skeleton-total">
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line"></div>
+                            <div class="skeleton-line final"></div>
+                        </div>
+                    </div>
+                    <!-- JS rendered -->
+                </div>
+                <div id="deliveryInfo">
+                    <h3>Delivery Information</h3>
+                    <div class="delivery-days">
+                        <i class="fas fa-truck"></i>
+                        <span>Estimated Delivery: <strong>3 to 5 business days</strong></span>
+                    </div>
+                    <p class="delivery-note">Your order will be delivered within 3 to 5 business days after confirmation.</p>
+                </div>
+                
+                <div id="paymentMethod">
+                    <h3>Payment Method</h3>
+                    <div class="payment-option">
+                        <input type="radio" id="cod" name="payment" value="cod" checked>
+                        <label for="cod">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Cash on Delivery</span>
+                        </label>
+                    </div>
+                    <p class="payment-note">You will pay when the order is delivered to your address.</p>
+                    <div class="money-back-guarantee">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>7-Day Money Back Guarantee</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Form -->
+            <div id="deliveryForm">
+                <h2>Delivery Details</h2>
+                
+                <!-- Saved Addresses Section (for logged-in users) -->
+                <div id="savedAddressesSection" style="display: none; margin-bottom: 30px;">
+                    <div class="form-group">
+                        <label style="font-size: 18px; font-weight: 600; color: rgb(3, 122, 122); margin-bottom: 15px; display: block;">Saved Addresses</label>
+                        
+                        <!-- Skeleton Loader -->
+                        <div id="addressesSkeleton" class="addresses-skeleton" style="display: none;">
+                            <div class="address-card-skeleton">
+                                <div class="skeleton-map"></div>
+                                <div class="skeleton-content">
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line short"></div>
+                                    <div class="skeleton-line"></div>
+                                </div>
+                            </div>
+                            <div class="address-card-skeleton">
+                                <div class="skeleton-map"></div>
+                                <div class="skeleton-content">
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line short"></div>
+                                    <div class="skeleton-line"></div>
+                                </div>
+                            </div>
+                            <div class="address-card-skeleton">
+                                <div class="skeleton-map"></div>
+                                <div class="skeleton-content">
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line short"></div>
+                                    <div class="skeleton-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Address Cards Container -->
+                        <div id="addressesContainer" class="addresses-container">
+                            <!-- Address cards will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <div class="phone-input-wrapper">
+                            <div class="country-code-selector">
+                                <span class="country-flag">🇵🇰</span>
+                                <span class="country-code">+92</span>
+                            </div>
+                            <input type="tel" id="phone" name="phone" required pattern="^[0-9]{10}$" placeholder="3XX-XXXXXXX" maxlength="10">
+                        </div>
+                        <small class="form-hint">Enter your 10-digit phone number (e.g., 3034651965)</small>
+                        <small id="phoneError" class="form-error" style="display: none; color: #c33; margin-top: 5px;"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Delivery Address *</label>
+                        <textarea id="address" name="address" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <select id="city" name="city" required>
+                            <option value="">Select a City</option>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" id="postalCode" name="postalCode" pattern="[0-9]{5}" placeholder="Enter postal code">
+                        <small class="form-hint">Postal code will be auto-filled based on city selection, or you can enter it manually</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">Province *</label>
+                        <input type="text" id="state" name="state" required readonly>
+                        <small class="form-hint">Province will be auto-filled based on city selection</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Place Order</button>
+                        <button type="button" id="saveAddressBtn" class="btn-secondary" style="display: none;">
+                            <i class="fas fa-save"></i> Save This Address
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+        </script>
+    <script src="js/savedAddresses.js"></script>
+    <!-- Optimistic UI Architecture -->
+    <script src="js/stateManager.js"></script>
+    <script src="js/apiLayer.js"></script>
+    <script src="js/uiLayer.js"></script>
+    <script src="js/optimisticCart.js"></script>
+    <script src="checkout.js"></script>
+    <!-- Global Search JS -->
+    <script src="js/headerSearch.js"></script>
+    <!-- WhatsApp Button -->
+    <script src="js/whatsappButton.js"></script>
+    
+    <!-- Authentication JS - Required for login button to work -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js"></script>
+    <script src="js/authUI.js"></script>
+    <script src="js/auth-global-init.js"></script>
+    <!-- User Cart Management - Required for badge updates -->
+    <script src="js/userCart.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us | CO TAILOR</title>
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/policy.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- CONTENT -->
+    <div class="contact-container">
+        <div class="contact-content">
+            <h1>Contact Us</h1>
+            <p class="contact-subtitle">We're here to help! Get in touch with us through any of the following methods.</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+923034651965">+92 303 4651965</a></p>
+                    <p class="contact-hours">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/923034651965" target="_blank" rel="noopener noreferrer">+92 303 4651965</a></p>
+                    <p class="contact-hours">Available 24/7</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@cotailor.com">info@cotailor.com</a></p>
+                    <p class="contact-hours">We respond within 24 hours</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Address</h3>
+                    <p>Building 101<br>Central Avenue<br>LA - 902722<br>United States</p>
+                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <h2>Send us a Message</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+
+    <script src="js/headerSearch.js"></script>
+    <script src="js/whatsappButton.js"></script>
+    <script src="js/contact.js"></script>
+    
+    <!-- Authentication JS - Required for login button to work -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js"></script>
+    <script src="js/authUI.js"></script>
+    <script src="js/auth-global-init.js"></script>
+    <!-- User Cart Management - Required for badge updates -->
+    <script src="js/userCart.js"></script>
+</body>
+</html>
+

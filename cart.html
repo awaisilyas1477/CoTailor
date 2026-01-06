@@ -7,9 +7,10 @@
     <title> Cart | E-COMMERCE WEBSITE BY EDYODA </title>
     <link rel="stylesheet" href="css/cart.css">
     <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpeg">
     <!-- header links -->
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
 </head>
@@ -36,6 +37,11 @@
             <!-- JS rendered code -->
         </div>
 
+        <!-- Buy Now Button Below Cart Items -->
+        <div id="buyNowButtonContainer" style="display: none;">
+            <!-- JS rendered code -->
+        </div>
+
     </div>
 
 </body>
@@ -51,5 +57,23 @@
             document.getElementById(4).innerHTML = req.responseText;
         }
     </script>
-<script src="/cart.js"></script>
+<!-- Authentication JS - Required for login button to work -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="css/auth.css">
+<script src="js/auth.js"></script>
+<script src="js/authUI.js"></script>
+<script src="js/auth-global-init.js"></script>
+<!-- User Cart Management - MUST load before cart.js -->
+<script src="js/userCart.js"></script>
+<!-- Optimistic UI Architecture -->
+<script src="js/stateManager.js"></script>
+<script src="js/apiLayer.js"></script>
+<script src="js/uiLayer.js"></script>
+<script src="js/optimisticCart.js"></script>
+<!-- Cart JS - Loads after userCart.js -->
+<script src="cart.js"></script>
+<!-- Global Search JS -->
+<script src="js/headerSearch.js"></script>
+<!-- WhatsApp Button -->
+<script src="js/whatsappButton.js"></script>
 </html>

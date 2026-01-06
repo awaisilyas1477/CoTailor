@@ -4,15 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> CONTENT DETAILS | E-COMMERCE WEBSITE BY EDYODA </title>
-    <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    
+    <!-- SEO Meta Tags -->
+    <title>Product Details - CO TAILOR | Juki Machine Accessories</title>
+    <meta name="description" content="Buy Juki machine accessories and parts at CO TAILOR. Quality industrial parts and accessories for your Juki machines.">
+    <meta name="keywords" content="Juki Machine Accessories, Industrial Parts, Juki Parts, Machine Accessories, CO TAILOR">
+    <meta name="author" content="CO TAILOR">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Product Details - CO TAILOR">
+    <meta property="og:description" content="Buy Juki machine accessories and parts at CO TAILOR">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="CO TAILOR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="Product Details - CO TAILOR">
+    <meta property="twitter:description" content="Buy Juki machine accessories and parts at CO TAILOR">
+    <meta property="twitter:image" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpeg">
     <!-- <link rel="stylesheet" href="/box1.css"> -->
     <link rel="stylesheet" href="css/contetDetails.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <!-- header links -->
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -27,6 +53,19 @@
         req.open("GET", url, false);
         req.send(null);
         document.getElementById(1).innerHTML = req.responseText;
+        
+        // Execute scripts from loaded HTML (scripts don't execute when inserted via innerHTML)
+        const scripts = document.getElementById(1).querySelectorAll('script');
+        scripts.forEach(function(oldScript) {
+            const newScript = document.createElement('script');
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.head.appendChild(newScript);
+            oldScript.remove();
+        });
     }
 </script>
     
@@ -34,7 +73,42 @@
         <!-- JS rendered code -->
     </div>
     
-<script src="/contentDetails.js"></script>
+    <!-- Product Reviews Section -->
+    <div id="productReviewsSection" class="product-reviews-section">
+        <div class="product-reviews-container">
+            <h2>Product Reviews</h2>
+            <div id="productReviewsContainer">
+                <!-- Reviews will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Drawer - Load early so it's available for all cart actions -->
+    <script src="js/cartDrawer.js"></script>
+    <!-- Optimistic UI Architecture -->
+    <script src="js/stateManager.js"></script>
+    <script src="js/apiLayer.js"></script>
+    <script src="js/uiLayer.js"></script>
+    <script src="js/optimisticCart.js"></script>
+    <!-- Product Variants Management -->
+    <script src="js/productVariants.js"></script>
+    <script src="contentDetails.js"></script>
+    <script src="js/productReviews.js"></script>
+    <script src="js/reviewForm.js"></script>
+    
+    <!-- Global Search JS -->
+    <script src="js/headerSearch.js"></script>
+    <!-- WhatsApp Button -->
+    <script src="js/whatsappButton.js"></script>
+    
+    <!-- Authentication JS - Required for login button to work -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js"></script>
+    <script src="js/authUI.js"></script>
+    <script src="js/auth-global-init.js"></script>
+    <!-- User Cart Management -->
+    <script src="js/userCart.js"></script>
 
 <!-- FOOTER -->
 <div id="4"></div>

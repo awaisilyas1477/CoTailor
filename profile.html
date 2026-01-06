@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Profile | CO TAILOR</title>
+    <link rel="icon" href="img/favicon.webp" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.webp" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- PROFILE CONTAINER -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-header-content">
+                <h1><i class="fas fa-user-circle"></i> My Profile</h1>
+                <p class="profile-subtitle">Manage your account information and preferences</p>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <!-- Profile Form -->
+            <form id="profileForm" class="profile-form">
+                <!-- Avatar Section - Moved to Top -->
+                <div class="form-section avatar-section-top">
+                    <div class="avatar-container">
+                        <div class="avatar-preview-large" id="avatarPreview">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="avatar-info">
+                            <h3>Profile Picture</h3>
+                            <p>Upload a photo to personalize your account</p>
+                            <div class="avatar-upload-group">
+                                <input type="url" id="avatarUrl" name="avatar_url" 
+                                       placeholder="Paste image URL here" class="avatar-url-input">
+                                <button type="button" class="btn-avatar-upload" onclick="document.getElementById('avatarUrl').focus()">
+                                    <i class="fas fa-link"></i> Add URL
+                                </button>
+                            </div>
+                            <small class="form-hint">Enter a direct image URL (e.g., https://example.com/image.jpg)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Information Section -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <i class="fas fa-user"></i>
+                        <h2>Personal Information</h2>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="profileFullName">Full Name *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="profileFullName" name="full_name" required 
+                                       placeholder="Enter your full name" maxlength="100">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileEmail">Email Address *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="profileEmail" name="email" required 
+                                       placeholder="Enter your email" readonly>
+                            </div>
+                            <small class="form-hint">Email address cannot be changed</small>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="profilePhone">Phone Number</label>
+                            <div class="phone-input-wrapper">
+                                <div class="country-code-selector">
+                                    <span class="country-flag">🇵🇰</span>
+                                    <span class="country-code">+92</span>
+                                </div>
+                                <input type="tel" id="profilePhone" name="phone_number" 
+                                       pattern="^[0-9]{10}$" placeholder="3XX-XXXXXXX" maxlength="10">
+                            </div>
+                            <small class="form-hint">Enter your 10-digit phone number</small>
+                            <small id="profilePhoneError" class="form-error" style="display: none;"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileDateOfBirth">Date of Birth</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar input-icon"></i>
+                                <input type="date" id="profileDateOfBirth" name="date_of_birth">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileGender">Gender</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-venus-mars input-icon"></i>
+                            <select id="profileGender" name="gender">
+                                <option value="">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer_not_to_say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences Section -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <i class="fas fa-cog"></i>
+                        <h2>Preferences & Settings</h2>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="profileLanguage">Preferred Language</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-language input-icon"></i>
+                            <select id="profileLanguage" name="preferred_language">
+                                <option value="en">English</option>
+                                <option value="ur">Urdu</option>
+                                <option value="ar">Arabic</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="notifications-section">
+                        <h3>Notification Preferences</h3>
+                        <div class="notification-cards">
+                            <label class="notification-card">
+                                <div class="notification-card-content">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="notification-info">
+                                        <span class="notification-title">Email Notifications</span>
+                                        <small>Receive updates and promotional emails</small>
+                                    </div>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="profileEmailNotifications" name="email_notifications" value="true">
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="notification-card">
+                                <div class="notification-card-content">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-sms"></i>
+                                    </div>
+                                    <div class="notification-info">
+                                        <span class="notification-title">SMS Notifications</span>
+                                        <small>Receive order updates via SMS</small>
+                                    </div>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="profileSmsNotifications" name="sms_notifications" value="true">
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages -->
+                <div id="profileMessage" class="profile-message" style="display: none;"></div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.history.back()">
+                        <i class="fas fa-arrow-left"></i> Cancel
+                    </button>
+                    <button type="submit" class="btn-primary" id="saveProfileBtn">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js"></script>
+    <script src="js/authUI.js"></script>
+    <script src="js/auth-global-init.js"></script>
+    <!-- User Cart Management - Required for badge updates -->
+    <script src="js/userCart.js"></script>
+    <script src="js/headerSearch.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/whatsappButton.js"></script>
+</body>
+</html>
+

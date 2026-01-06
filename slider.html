@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> SLIDER | E-COMMERCE WEBSITE </title>
     <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpeg">
     <!-- EXTERNAL LINKS -->
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <style>
@@ -27,12 +28,21 @@
         #containerSlider img
         {
             width: 100%;
-            height: 140%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
             text-align: center;
             align-content: center;
+            border: 3px solid rgb(3, 122, 122);
+            border-radius: 15px;
+            box-sizing: border-box;
         }
-        @media(max-width: 732px)
+        @media(max-width: 767px)
         {
+            #containerSlider
+            {
+                padding-top: 70px;
+            }
             #containerSlider img
             {
                 height: 12em;
@@ -51,14 +61,16 @@
 <body>
     <section>
             <div id="containerSlider">
-                <div id="slidingImage"> <img src="img/img1.png" alt="image1"> </div>
-                <div id="slidingImage"> <img src="img/img2.png" alt="image2"> </div>
-                <div id="slidingImage"> <img src="img/img3.png" alt="image3"> </div>
-                <div id="slidingImage"> <img src="img/img4.png" alt="image4"> </div>
+                <div id="slidingImage"> <img src="img/img1.jpg" alt="image2"> </div>
+                <div id="slidingImage"> <img src="img/img2.jpg" alt="image3"> </div>
+                <div id="slidingImage"> <img src="img/img3.jpg" alt="image2"> </div>
+                <div id="slidingImage"> <img src="img/img4.jpg" alt="image3"> </div>
+             
             </div>
     </section>
 </body>
     <!-- <script src=“https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js”></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script>
         $(document).ready(function()

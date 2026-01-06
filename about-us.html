@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us | CO TAILOR</title>
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg" sizes="16x16">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/policy.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- CONTENT -->
+    <div class="policy-container">
+        <div class="policy-content">
+            <h1>About Us</h1>
+
+            <section>
+                <h2>Welcome to CO TAILOR</h2>
+                <p>CO TAILOR is your trusted source for high-quality Juki machine parts and accessories. We specialize in providing authentic Juki products to help you maintain and enhance your sewing machines.</p>
+            </section>
+
+            <section>
+                <h2>Our Mission</h2>
+                <p>Our mission is to provide customers with genuine, high-quality Juki machine parts and accessories at competitive prices, backed by excellent customer service and fast delivery.</p>
+            </section>
+
+            <section>
+                <h2>What We Offer</h2>
+                <ul>
+                    <li><strong>Juki Machine Parts:</strong> Genuine replacement parts for all Juki machine models</li>
+                    <li><strong>Juki Needles:</strong> High-quality needles for various sewing applications</li>
+                    <li><strong>Juki Presser Feet:</strong> Specialized presser feet for different sewing techniques</li>
+                    <li><strong>Juki Accessories:</strong> A wide range of accessories to enhance your sewing experience</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Why Choose Us</h2>
+                <ul>
+                    <li><strong>Authentic Products:</strong> We only sell genuine Juki products</li>
+                    <li><strong>Quality Assurance:</strong> All products are tested and verified before shipping</li>
+                    <li><strong>Fast Delivery:</strong> Quick 3-5 day delivery across Pakistan</li>
+                    <li><strong>Customer Support:</strong> Dedicated support team to assist you</li>
+                    <li><strong>Competitive Prices:</strong> Best prices for quality Juki products</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Our Commitment</h2>
+                <p>At CO TAILOR, we are committed to:</p>
+                <ul>
+                    <li>Providing exceptional customer service</li>
+                    <li>Ensuring product quality and authenticity</li>
+                    <li>Maintaining competitive pricing</li>
+                    <li>Fast and reliable delivery</li>
+                    <li>Building long-term relationships with our customers</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you! Get in touch with us:</p>
+                <p><strong>Email:</strong> info@cotailor.com<br>
+                <strong>Phone:</strong> +92 303 4651965<br>
+                <strong>WhatsApp:</strong> +92 303 4651965<br>
+                <strong>Address:</strong> Building 101, Central Avenue, LA - 902722, United States</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+
+    <script src="js/headerSearch.js"></script>
+    <script src="js/whatsappButton.js"></script>
+    
+    <!-- Authentication JS - Required for login button to work -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js"></script>
+    <script src="js/authUI.js"></script>
+    <script src="js/auth-global-init.js"></script>
+    <!-- User Cart Management - Required for badge updates -->
+    <script src="js/userCart.js"></script>
+</body>
+</html>
+
